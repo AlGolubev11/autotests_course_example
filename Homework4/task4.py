@@ -10,12 +10,11 @@
 def multiplication_chain(num):
     count_multy = 0
     while num >= 10:
-        a = str(num)
-        b = 1
-        for a in a:
-            b *= int(a)
+        new_num = 1
+        for i in str(num):
+            new_num *= int(i)
         count_multy += 1
-        num = b
+        num = new_num
     return count_multy
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
