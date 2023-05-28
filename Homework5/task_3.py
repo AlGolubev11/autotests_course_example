@@ -22,20 +22,15 @@ def everything_for_your_cat(cats_data):
     catalog = {}
     for cat in cats_data:
         name = cat[2] + ' ' + cat[3]
-        pet_info = (cat[0], cat[1])
+        pet_info = f'{cat[0]}, {cat[1]}'
         if name not in catalog:
-            catalog[name] = [pet_info]
+            catalog[name] = pet_info
         else:
-            catalog[name].append(pet_info)
+            catalog[name] += f'; {pet_info}'
     our_str = ''
     for owner, pets in catalog.items():
-        pet_str = ''
-        for pet in pets:
-            pet_str += pet[0] + ', ' + str(pet[1]) + '; '
-        pet_str = pet_str[:-2]
-        our_str += owner + ': ' + pet_str + '\n'
+        our_str += f'{owner}: {pets}\n'
     return our_str
-
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
 
